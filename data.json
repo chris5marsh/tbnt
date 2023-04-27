@@ -1,0 +1,12 @@
+[
+  {
+    "id": "abc123",
+    "description": "Example description",
+    "url": "http://www.example.com"
+  },
+  {
+    "id": "def456",
+    "description": "Example description 2",
+    "url": "http://www.example.net"
+  }
+]

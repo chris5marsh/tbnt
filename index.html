@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TBNT</title>
+    <style>
+      html {
+        line-height: 1.6;
+        box-sizing: border-box;
+      }
+    </style>
+    <script>
+      fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+          const article = document.querySelector('article');
+          const random = Math.floor(Math.random() * data.length);
+          article.id = data[random].id;
+          article.innerHTML = `
+            <p>${data[random].description}</p>
+            <p><a href="${data[random].url}">Donate</a></p>
+          `
+        });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>TB? NT!</h1>
+    </header>
+    <main>
+      <p>Instead of..., you could...</p>
+      <article>
+        Loading...
+      </article>
+    </main>
+    <footer>
+      <p>Created by <a href="https://twitter.com/chris5marsh">@chris5marsh</a></p>
+    </footer>
+  </body>
+</html>
