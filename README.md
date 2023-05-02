@@ -1,4 +1,6 @@
-# Twitter Blue? No Thanks!
+# Blue Tick? No Thanks!
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eaf8e416-1e3a-411a-85ab-8ba06d478d0d/deploy-status)](https://app.netlify.com/sites/blue-tick-no-thanks/deploys)
 
 There are a lot of people who would rather not pay the $8/£9.60/however much it is on this confusing chart for the "benefit" of having a blue tick next to their name on Twitter. Instead, you could actually help the world in which we live.
 
