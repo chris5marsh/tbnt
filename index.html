@@ -1,40 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>TBNT</title>
+    <meta charset="utf-8" />
+    <title>Twitter Blue? No Thanks!</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <style>
       html {
+        font-size: 20px;
         line-height: 1.6;
         box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+      body {
+        background: #badaff;
+        margin: 0;
+      }
+      main {
+        min-height: 100vh;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 {
+        font-size: clamp(1.5rem, 4vw, 2.4rem);
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+      }
+      section {
+        flex-grow: 1;
+      }
+      .logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 100px;
+        aspect-ratio: 1;
+      }
+      .description {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        text-align: center;
+      }
+      .donate {
+        display: block;
+        margin: 0 auto;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+      .refresh {
+        text-align: center;
       }
     </style>
     <script>
-      fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-          const article = document.querySelector('article');
-          const random = Math.floor(Math.random() * data.length);
-          article.id = data[random].id;
-          article.innerHTML = `
-            <p>${data[random].description}</p>
-            <p><a href="${data[random].url}">Donate</a></p>
-          `
+      let data;
+
+      const refreshData = () => {
+        console.log('refreshing data');
+        const article = document.querySelector("article");
+        const random = Math.floor(Math.random() * data.length);
+        console.log(article, random);
+        article.id = data[random].id;
+        article.innerHTML = `
+          <p class="description">&hellip;${data[random].description}</p>
+          <p><a class="donate" href="${data[random].url}">Donate to ${data[random].organisation}</a></p>
+        `;
+      };
+
+      fetch("data.json")
+        .then((response) => response.json())
+        .then((fetchedData) => {
+          data = fetchedData;
+          refreshData();
+          document.querySelector('.refresh').addEventListener('click', () => {
+            console.log('refreshing');
+            refreshData(); // window.location.reload();
+          });
         });
+
     </script>
   </head>
   <body>
-    <header>
-      <h1>TB? NT!</h1>
-    </header>
+    <script type="text/javascript">
+      (function(window, document, dataLayerName, id) {
+      window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+      function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
+      var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+      var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+      tags.async=!0,tags.src="https://twitterbluenothanks.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+      !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+      })(window, document, 'dataLayer', 'a5b8c98b-3025-4170-9313-dfbc3ca58787');
+    </script>
     <main>
-      <p>Instead of..., you could...</p>
-      <article>
-        Loading...
-      </article>
+      <header>
+        <h1>
+          <img src="apple-touch-icon.png" alt="No to Twitter Blue" width="80" height="80" />
+          Twitter Blue? No Thanks!
+        </h1>
+      </header>
+      <section>
+        <p>
+          There are a lot of people who would rather not pay the
+          $8/£9.60/however much it is on
+          <a
+            href="https://help.twitter.com/en/using-twitter/twitter-blue#tbpricing-bycountry"
+            >this confusing table</a
+          >
+          for the "benefit" of having a blue tick next to their name on Twitter.
+        </p>
+        <p>Instead, you could actually help the world in which we live in one of
+          the following ways.
+        </p>
+        <p>Rather than paying for Twitter Blue, you could&hellip;</p>
+        <article>Loading...</article>
+        <p class="refresh">Refresh</p>
+      </section>
+      <footer>
+        <p>
+          Created by <a href="https://twitter.com/chris5marsh">@chris5marsh</a>
+        </p>
+        <p>twitterbluenothanks.com is not endorsed or supported by any of the organisations mentioned here or, for that matter, Twitter.</p>
+      </footer>
     </main>
-    <footer>
-      <p>Created by <a href="https://twitter.com/chris5marsh">@chris5marsh</a></p>
-    </footer>
   </body>
 </html>
