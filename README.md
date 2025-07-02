@@ -15,6 +15,8 @@ Fork this repository, and add the following details to `data.json`:
 * description (it should complete the sentence "Rather than paying for a Blue Tick, you could&hellip;")
 * url (linking directly to a page where the user can donate)
 
+After updating `data.json`, run `npm test` to check that the file is valid.
+
 ## Endorsement
 
 This website is just a fun way to compare the cost of a Twitter Blue subscription to other, more worthy causes. The charities and organisations featured here have not endorsed or asked to be featured, they are just causes that I think are worth supporting.
