@@ -17,6 +17,6 @@ Fork this repository, and add the following details to `data.json`:
 
 ## Endorsement
 
-This website is just a fun way to compare the cost of a Twitter Blue subscription to other, kore worthy causes. The charities and organisations featured here have not endorsed or asked to be featured, they are just causes that I think are worth supporting.
+This website is just a fun way to compare the cost of a Twitter Blue subscription to other, more worthy causes. The charities and organisations featured here have not endorsed or asked to be featured, they are just causes that I think are worth supporting.
 
 You can contact me on [Mastodon](https://mastodon.social/@chris5marsh) or, ironically, on [Twitter](https://twitter.com/chris5marsh) (which I do _not_ pay for).
