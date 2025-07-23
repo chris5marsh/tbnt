@@ -100,6 +100,11 @@
     <script defer>
       let data;
 
+      /**
+       * Replace the article content with a randomly selected entry from the
+       * loaded donation data.
+       * @returns {void}
+       */
       const refreshData = () => {
         console.log('refreshing data');
         const article = document.querySelector("article");
@@ -113,15 +118,38 @@
       };
 
       fetch("data.json")
-        .then((response) => response.json())
-        .then((fetchedData) => {
-          data = fetchedData;
-          refreshData();
-          document.querySelector('.refresh').addEventListener('click', () => {
-            console.log('refreshing');
-            refreshData(); // window.location.reload();
-          });
-        });
+        .then(
+          /**
+           * Convert the fetch response to JSON.
+           * @param {Response} response
+           * @returns {Promise<unknown>}
+           */
+          (response) => response.json()
+        )
+        .then(
+          /**
+           * Handle the loaded donation data and set up the refresh handler.
+           * @param {Array<Object>} fetchedData
+           * @returns {void}
+           */
+          (fetchedData) => {
+            data = fetchedData;
+            refreshData();
+            document
+              .querySelector('.refresh')
+              .addEventListener(
+                'click',
+                /**
+                 * Refresh the displayed data when the user clicks the refresh link.
+                 * @returns {void}
+                 */
+                () => {
+                  console.log('refreshing');
+                  refreshData(); // window.location.reload();
+                }
+              );
+          }
+        );
 
     </script>
   </head>
